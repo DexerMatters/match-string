@@ -1,6 +1,7 @@
 # match-string
 
 A Rust library for simple and flexible string pattern matching.
+
 [![Crates.io](https://img.shields.io/crates/v/match-string.svg)](https://crates.io/crates/match-string)
 [![Documentation](https://docs.rs/match-string/badge.svg)](https://docs.rs/match-string)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE-MIT)

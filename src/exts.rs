@@ -2,10 +2,10 @@ use crate::base::{Destination, Pattern, PeekableExt, Satisfies};
 use std::cell::RefCell;
 
 pub struct Token<Ref, Dest> {
-    predicate: fn(&Ref) -> bool,
-    parser: fn(Vec<Ref>) -> Dest,
-    at_least: usize,
-    skip_leading: Option<fn(&Ref) -> bool>,
+    pub predicate: fn(&Ref) -> bool,
+    pub parser: fn(Vec<Ref>) -> Dest,
+    pub at_least: usize,
+    pub skip_leading: Option<fn(&Ref) -> bool>,
 }
 
 impl<'a, Reference, RefT, D> Pattern<'a, Reference> for Token<RefT, D>
