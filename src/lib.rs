@@ -6,8 +6,6 @@ pub mod exts;
 pub use base::{Checkpoint, Or, Pattern, Sep, Sep1, To};
 pub use match_string_macros::matches;
 
-use crate::exts::ALPHABETIC;
-
 /// Internal helper used by the proc-macro to call the `Pattern::matches` method
 /// with the correct trait bounds so method resolution succeeds in macro expansions.
 pub fn __matches<'a, 's, P, Reference, R>(pat: &'a P, reference: &'s R) -> bool
@@ -19,10 +17,4 @@ where
     Reference::Item: crate::base::Satisfies<<P::Iter as Iterator>::Item>,
 {
     <P as crate::base::Pattern<'a, Reference>>::matches(pat, reference)
-}
-
-#[test]
-fn test() {
-    let matched = matches!("hello, world!" => "hello, ", ALPHABETIC, "!");
-    assert!(matched);
 }

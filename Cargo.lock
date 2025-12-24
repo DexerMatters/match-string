@@ -12,6 +12,8 @@ dependencies = [
 [[package]]
 name = "match_string_macros"
 version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4d8b78907fd80856796043dc9659170566f9390358f7ea8cb337ba2e76c47ec8"
 dependencies = [
  "proc-macro2",
  "quote",
