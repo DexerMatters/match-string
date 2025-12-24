@@ -12,7 +12,7 @@ Simple matches using built-in tokens:
 ```rust
 matches!("Hello, World!"    => ALPHABETIC, ", ", ALPHABETIC);
 matches!("123 456"          => NUM, " ", NUM);
-matches!("[12, 34, 56]"     => "[", NUM[","]+, "]");
+matches!("[12,34,56]"     => "[", NUM[","]+, "]");
 matches!("foobarfoofoobar"  => ("foo" / "bar")+);
 ```
 
@@ -23,7 +23,7 @@ let name: Dest<String> = Dest::new();
 let greeting = matches!("Hello, Alice!" => "Hello, ", name@ALPHABETIC, "!");
 
 let arrays: Dest<Vec<usize>> = Dest::new();
-let numbers = matches!("[1, 2, 3]" => "[", (arrays@NUM)[","]+, "]");
+let numbers = matches!("[1,2,3]" => "[", (arrays@NUM)[","]+, "]");
 ```
 
 Custom tokens:
