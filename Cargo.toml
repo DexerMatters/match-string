@@ -11,4 +11,4 @@ categories = ["parsing", "text-processing"]
 authors = ["Dexer Matters"]
 
 [dependencies]
-match_string_macros = "0.1.0"
+match_string_macros = "0.1.1"

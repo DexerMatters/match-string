@@ -179,8 +179,22 @@ fn build_pattern_tokens(pattern: &PatternExpr) -> proc_macro2::TokenStream {
             }
         }
         PatternKind::Tuple(exprs) => {
-            let inner = exprs.iter().map(build_pattern_tokens);
-            quote! { (#(#inner),*) }
+            if exprs.is_empty() {
+                quote! { () }
+            } else if exprs.len() == 1 {
+                build_pattern_tokens(&exprs[0])
+            } else if exprs.len() == 2 {
+                let inner = exprs.iter().map(build_pattern_tokens);
+                quote! { (#(#inner),*) }
+            } else {
+                // Fold into nested pairs: (a,b,c,d) => (((a,b),c),d)
+                let mut tokens = build_pattern_tokens(&exprs[0]);
+                for expr in &exprs[1..] {
+                    let inner = build_pattern_tokens(expr);
+                    tokens = quote! { (#tokens, #inner) };
+                }
+                tokens
+            }
         }
         PatternKind::Many(expr) => {
             let inner = build_pattern_tokens(expr);

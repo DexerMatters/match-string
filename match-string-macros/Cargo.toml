@@ -1,6 +1,6 @@
 [package]
 name = "match_string_macros"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Proc-macro to provide ergonomic pattern-matching syntax for the `match-string` crate"
 license = "MIT OR Apache-2.0"

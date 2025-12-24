@@ -5,7 +5,9 @@ use std::{
     str::Chars,
 };
 
-use crate::dest;
+use match_string_macros::matches;
+
+use crate::{dest, exts::ALPHABETIC};
 
 use std::collections::VecDeque;
 
@@ -187,7 +189,7 @@ where
         Reference::Item: Satisfies<<Self::Iter as Iterator>::Item>,
     {
         let mut iter = reference.get_iter();
-        self.consume(&mut iter)
+        self.consume(&mut iter) && iter.peek().is_none()
     }
     /// Consume items from the reference iterator, optionally storing matched items in a destination.
     fn consume_with_dest(

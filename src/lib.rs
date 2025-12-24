@@ -4,6 +4,9 @@ pub mod exts;
 
 // Re-exports to make core pattern types available at crate root for macro expansions
 pub use base::{Checkpoint, Or, Pattern, Sep, Sep1, To};
+pub use match_string_macros::matches;
+
+use crate::exts::ALPHABETIC;
 
 /// Internal helper used by the proc-macro to call the `Pattern::matches` method
 /// with the correct trait bounds so method resolution succeeds in macro expansions.
@@ -16,4 +19,10 @@ where
     Reference::Item: crate::base::Satisfies<<P::Iter as Iterator>::Item>,
 {
     <P as crate::base::Pattern<'a, Reference>>::matches(pat, reference)
+}
+
+#[test]
+fn test() {
+    let matched = matches!("hello, world!" => "hello, ", ALPHABETIC, "!");
+    assert!(matched);
 }

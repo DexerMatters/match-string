@@ -13,7 +13,7 @@ Simple matches using built-in tokens:
 matches!("Hello, World!"    => ALPHABETIC, ", ", ALPHABETIC);
 matches!("123 456"          => NUM, " ", NUM);
 matches!("[12, 34, 56]"     => "[", NUM[","]+, "]");
-matches!("foobarfoofoobar" => ("foo" / "bar")+);
+matches!("foobarfoofoobar"  => ("foo" / "bar")+);
 ```
 
 Capturing matched values:
