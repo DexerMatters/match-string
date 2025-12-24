@@ -5,3 +5,5 @@ Cargo.lock
 # IDEs
 .vscode/
 .idea/
+
+/match-string-macros/target

@@ -2,6 +2,12 @@
 name = "match_string_macros"
 version = "0.1.0"
 edition = "2024"
+description = "Proc-macro to provide ergonomic pattern-matching syntax for the `match-string` crate"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yourusername/match-string"
+homepage = "https://github.com/yourusername/match-string"
+keywords = ["proc-macro", "pattern", "parser", "macros"]
+authors = ["Your Name <you@example.com>"]
 
 [lib]
 proc-macro = true
@@ -10,3 +16,6 @@ proc-macro = true
 proc-macro2 = "1.0"
 quote = "1.0"
 syn = { version = "2.0", features = ["full"] }
+
+[badges]
+github-actions = { repository = "yourusername/match-string", branch = "main" }
