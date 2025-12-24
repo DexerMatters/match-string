@@ -2,5 +2,13 @@
 name = "match-string"
 version = "0.1.0"
 edition = "2024"
+description = "Lightweight pattern-matching utilities for strings and sequences, with a proc-macro for ergonomic syntax"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/DexerMatters/match-string"
+homepage = "https://github.com/DexerMatters/match-string"
+keywords = ["pattern", "parser", "macros", "strings"]
+categories = ["parsing", "text-processing"]
+authors = ["Dexer Matters"]
 
 [dependencies]
+match_string_macros = { path = "match-string-macros" }
