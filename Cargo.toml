@@ -1,6 +1,6 @@
 [package]
 name = "match-string"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Lightweight pattern-matching utilities for strings and sequences, with a proc-macro for ergonomic syntax"
 license = "MIT OR Apache-2.0"
